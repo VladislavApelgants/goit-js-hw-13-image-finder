@@ -32,6 +32,9 @@
     "basiclightbox": "^5.0.4",
     "hbs": "^4.1.2",
     "hbs-precompiler": "^0.1.2",
-    "lodash.debounce": "^4.0.8"
+    "infinite-scroll": "^4.0.1",
+    "lodash.debounce": "^4.0.8",
+    "src": "^1.1.2",
+    "validator": "^13.6.0"
   }
 }

@@ -4,31 +4,31 @@ export default class serviceApi {
     this.KEY = '23530022-92f1b2e37220c2d922c4e208a';
     this.BASE_URL = 'https://pixabay.com/api/';
     this.endPoint = `name/`;
-    this.value = '';
+        this.value = '';
     }
 
    
 async fetchDataDb() {
     try {
-        const response = await fetch(`${this.BASE_URL}?image_type=photo&orientation=horizontal&q=${this.value}&page=${this.page}&per_page=3&key=${this.KEY}`);
+        const response = await fetch(`${this.BASE_URL}?image_type=photo&orientation=horizontal&q=${this.value}&page=${this.page}&per_page=12&key=${this.KEY}`);
         const data = await response.json();
-        this.scrollToEnd();
-        return data;
         
+        return data;
     } catch (error) {
         console.log('ошибка', error);
     };
     
     };
 
-
+  
 scrollToEnd() {
-    const element = document.getElementById('gallery');
-            element.scrollIntoView({
+       gallery.scrollIntoView({
             behavior: 'smooth',
             block: 'end',
-            });
-}
+        });
+} 
+
+    
 
 resetPage() {
     this.page = 1;
@@ -43,7 +43,9 @@ set addValue(newValue) {
     };
 
 
-set addPage(newPage) {
+
+set addNewPage(newPage) {
     this.page += newPage;
     };
+
 }
