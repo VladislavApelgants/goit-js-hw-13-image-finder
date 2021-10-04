@@ -5,7 +5,7 @@ import cardImage from '../templates/card-image.hbs'
 import validator from 'validator';
 import lightBox from './modalLightBox.js';
 
-const { gallery, searchForm, showBtn} = refs;
+const { gallery, searchForm, showBtn, up} = refs;
 
 const apiService = new api();
 
@@ -61,7 +61,41 @@ const objectRender = {
     }, 500));
 
 
+
+
 showBtn.addEventListener('click', () => {
     apiService.addNewPage = 1;
     objectRender.createElemToHtml();
 });
+
+
+
+up.addEventListener('click', scrollToTop);
+
+window.addEventListener('scroll', listenScroll);
+
+function listenScroll() {
+    let scrolled = window.pageYOffset;
+
+    let coords = document.documentElement.clientHeight;
+
+    if (scrolled > coords) {
+        up.classList.add('show')
+    }
+    if (scrolled < coords) {
+        up.classList.remove('show')
+    }
+};
+
+function scrollToTop() {
+//     if (window.pageYOffset > 0) {
+//         window.scrollBy(0, -20);
+//         setTimeout(scrollToTop, 0 )
+// }
+    
+    var scrollStep = window.pageYOffset / 40;
+if (window.pageYOffset > 0) {
+window.scrollBy(0, -(scrollStep));
+setTimeout(scrollToTop, 0);
+}
+};

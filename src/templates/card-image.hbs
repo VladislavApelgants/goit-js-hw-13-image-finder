@@ -1,8 +1,10 @@
 {{#each this}}
 <li class="gallery__item" >
   <div class="photo-card">
-    <img src="{{webformatURL}}" alt="{{tags}}" width="{{webformatWidth}}" height="{{webformatHeight}}" data-source="{{largeImageURL}}"/>
-  
+<div class="photo__container">
+      <img src="{{webformatURL}}" alt="{{tags}}" width="{{webformatWidth}}" height="{{webformatHeight}}"
+        data-source="{{largeImageURL}}" />
+</div>  
     <div class="stats">
       <p class="stats-item">
         
@@ -13,11 +15,6 @@
         
         <i class="material-icons">visibility</i>
       {{views}}
-      </p>
-      <p class="stats-item">
-        
-        <i class="material-icons">comment</i>
-        {{comments}}
       </p>
       <p class="stats-item">
         

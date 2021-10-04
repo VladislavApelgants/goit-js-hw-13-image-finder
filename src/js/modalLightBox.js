@@ -10,7 +10,7 @@ gallery.addEventListener('click', (e) => {
     const  instance = basicLightbox.create(`
 		<img width="500" height="300" src='${e.target.dataset.source}'>
 	`)
-
+console.dir(e.target)
    if(e.target.localName === 'img'){
        instance.show()
 
